@@ -1,0 +1,9 @@
+{
+  "CHROME_DRIVER_PATH": "src/test/resources/driver/chromedriver",
+  "SELENIUM_GRID_URL": "http://localhost:4444/wd/hub",
+  "URL": "http://automationpractice.com/",
+  "USER_EMAIL": "some_test_2@mail.com",
+  "USER_PASSWORD": "some_test_password",
+  "LAUNCH_OPTION": "LOCALLY",
+  "LAUNCH_OPTION_COMMENT": "possible values - LOCALLY, SELENIUM_GRID"
+}
