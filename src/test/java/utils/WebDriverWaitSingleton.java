@@ -9,7 +9,7 @@ public class WebDriverWaitSingleton {
 
     public static WebDriverWait getWaiter() {
         if (wait == null) {
-            wait = new WebDriverWait(WebDriverSingleton.getDriver(), 5);
+            wait = new WebDriverWait(WebDriverSingleton.getDriver(), 10);
         }
         return wait;
     }

@@ -5,14 +5,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.PersonalInfoPage;
 import utils.JSONFileParser;
 import utils.TestResultsWatcher;
 import utils.WebDriverSingleton;
 
 
 @ExtendWith(TestResultsWatcher.class)
-public class CreateAccountTest {
+public class LoginTest {
     private static WebDriver driver;
 
     @BeforeAll
@@ -26,16 +25,15 @@ public class CreateAccountTest {
     }
 
     @Test
-    void verifyAccountCreation () {
+    void verifyLoginWithExistentAccount () {
         loadHomePage();
         HomePage homePage = new HomePage();
         LoginPage loginPage = homePage.clickSignInButton();
-        loginPage.enterEmail();
-        PersonalInfoPage personalInfoPage = loginPage.clickCreateAccountButton();
-        personalInfoPage.fillInRequiredFields();
-        personalInfoPage.clickSubmitButton();
+        loginPage.enterRegisteredEmail();
+        loginPage.enterPassword();
+        loginPage.clickSignInButton();
 
-        Assertions.assertTrue(personalInfoPage.isMyAccountPageDisplayed());
+        Assertions.assertTrue(loginPage.isMyAccountPageDisplayed());
     }
 
     private void loadHomePage() {
